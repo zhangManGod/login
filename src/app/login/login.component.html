@@ -1,0 +1,91 @@
+<div class="login-block">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                  <h3 class="box-title"></h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+                      <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
+                      <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                      <li data-target="#carousel-example-generic" data-slide-to="3" class=""></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="item">
+                        <img src="../../assets/3.jpg" alt="First slide">
+    
+                        <div class="carousel-caption">
+                          First Slide
+                        </div>
+                      </div>
+                      <div class="item active">
+                        <img src="../../assets/2.png" alt="Second slide">
+    
+                        <div class="carousel-caption">
+                          Second Slide
+                        </div>
+                      </div>
+                      <div class="item">
+                        <img src="../../assets/1.jpg" alt="Third slide">
+    
+                        <div class="carousel-caption">
+                          Third Slide
+                        </div>
+                      </div>
+                      <div class="item">
+                        <img src="../../assets/4.jpg" alt="Fourth slide">
+    
+                        <div class="carousel-caption">
+                          Fourth Slide
+                        </div>
+                      </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                      <span class="fa fa-angle-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                      <span class="fa fa-angle-right"></span>
+                    </a>
+                  </div>
+                </div>
+                <!-- /.box-body -->
+              </div>
+        </div>
+        <div class="col-md-4 login-box">
+            <h3 class="text-center">
+                AVAYA
+              </h3>
+              <h2 class="text-center">
+                Login Now
+              </h2>
+              
+              <form [formGroup] = "formModel" class="login-form" (submit) = "login()">
+                <div class="form-group">
+                  <label for="userName" class="text-uppercase">Username:</label>
+                  <input type="text" formControlName = "userName" class="form-control" placeholder="">
+                  <h4 [hidden]="!formModel.hasError('required','userName') || formModel.get('userName').untouched">name is required</h4>
+                </div>
+                <div class="form-group">
+                  <label for="userPsd" class="text-uppercase">Password:</label>
+                  <input type="password" formControlName = "userPassword" class="form-control" placeholder="">
+                  <h4 [hidden] = "!formModel.hasError('required','userPassword') || formModel.get('userPassword').untouched">password is required</h4>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input">
+                    <a>Remember Me</a>
+                  </label>
+                  <button type="submit" class="btn btn-success pull-right">signIn</button>
+                </div>
+                <a [routerLink]="[ '/changePwd' ]">change my password</a>
+              
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
